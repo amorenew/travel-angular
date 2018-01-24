@@ -2,8 +2,13 @@ import {storiesOf} from '@storybook/angular';
 import {HeadComponent} from '../src/app/head/head.component';
 import {HeaderComponent} from '../src/app/header/header.component';
 import {TitleBarComponent} from '../src/framework/title-bar/title-bar.component';
+import {ContentComponent} from '../src/framework/content/content.component';
 
-storiesOf('My Button', module).add('with some emoji', () => ({
+storiesOf('My Button', module)
+.add('Font Test',()=>({
+    component: ContentComponent
+}))
+.add('with some emoji', () => ({
     component: HeadComponent,
     props: {
         text: '😀 😎 👍 💯'
