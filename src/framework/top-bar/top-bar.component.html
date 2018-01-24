@@ -1,0 +1,13 @@
+<a *ngFor="let icon of frameworkConfigService.socialIcons" [href]="icon.link" [title]="icon.alt">
+  <img class="top-image" [src]="icon.imageFile" [alt]="icon.alt">
+</a>
+
+<div *ngIf="frameworkConfigService.showLanguageSelector">
+  <img class="flag-image" src="assets/ic_english.svg" alt="Flag">
+  <span>Saudia Arabia</span>
+  <span class="glyphicon glyphicon-chevron-down"></span>
+</div>
+
+<div *ngIf="frameworkConfigServices.showUserControls">
+  <span>Sign IN</span>
+</div>
