@@ -1,13 +1,13 @@
 import {storiesOf} from '@storybook/angular';
-import {HeaderComponent} from '../app/header/header.component';
+import {HeadComponent} from '../src/app/head/head.component';
 
 storiesOf('My Button', module).add('with some emoji', () => ({
-    component: HeaderComponent,
+    component: HeadComponent,
     props: {
         text: '😀 😎 👍 💯'
     }
 })).add('with some emoji and action', () => ({
-    component: HeaderComponent,
+    component: HeadComponent,
     props: {
         text: '😀 😎 👍 💯'
 
