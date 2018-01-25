@@ -1,33 +1,37 @@
 :host{
     height: 30px;
-    text-align: right;
     padding-top: 4px;
-    color:#888;
+    color: #888;
+    text-align: right;
 }
 
-div{
+div {
     display: inline;
     margin-left: 34px;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.top-image{
-    width:18px;
-    height:18px;
-    margin-left:8px;
+.top-image {
+    width: 25px;
+    height: 25px;
+    margin-left: 8px;
     vertical-align: middle;
 }
 
 .flag-image {
-   width: 22px;
-    height: 16px;
+    width: 28px;
+    height: 20px;
     vertical-align: middle;
+}
+
+.top-bar-text {
+    color:white; 
 }
 
 span.glyphicon {
     margin-left: 4px;
-    font-size:11px;
+    font-size: 11px;
 }

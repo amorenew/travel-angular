@@ -11,11 +11,11 @@ export class AppComponent {
           alt: 'Facebook',
           link: 'https:/www.facebook.com'
         }, {
-          imageFile: 'assets/sample.png',
+          imageFile: 'assets/ic_social_tw.svg',
           alt: 'Twitter',
           link: 'https:/www.twitter.com'
         }, {
-          imageFile: 'assets/ic_logo_header.png',
+          imageFile: 'assets/ic_social_gp.svg',
           alt: 'Google +',
           link: 'https:/www.Google.com'
         }

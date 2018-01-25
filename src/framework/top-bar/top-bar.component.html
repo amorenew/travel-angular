@@ -1,18 +1,13 @@
 <a *ngFor="let icon of frameworkConfigService.socialIcons" [href]="icon.link" [title]="icon.alt">
   <img class="top-image" [src]="icon.imageFile" [alt]="icon.alt">
 </a>
-<a *ngFor="let icon of frameworkConfigService.socialIcons" [href]="icon.link" [title]="icon.alt">
-  <button class="btn btn-primary">{{icon.imageFile}}</button>
-</a>
-
-<button class="btn btn-danger">{{frameworkConfigService.socialIcons.length}}</button>
 
 <div *ngIf="frameworkConfigService.showLanguageSelector">
   <img class="flag-image" src="assets/ic_english.svg" alt="Flag">
-  <span>English</span>
-  <span class="glyphicon glyphicon-chevron-down"></span>
+  <span class="top-bar-text">English</span>
+  <span class="top-bar-text glyphicon glyphicon-chevron-down"></span>
 </div>
 
-<div *ngIf="frameworkConfigServices.showUserControls">
-  <span>Sign IN</span>
+<div *ngIf="frameworkConfigService.showUserControls">
+  <span class="top-bar-text">Sign IN</span>
 </div>

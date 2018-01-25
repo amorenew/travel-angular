@@ -1,8 +1,16 @@
-<div class="title-bar">
-  <img src="assets/ic_logo_header.png" alt="Travel Logo"class="bar-logo">
+<div *ngIf="!screenService.isLarge()" class="title-bar-small  user-title-bar">
+  <span class="glyphicon glyphicon-menu-hamburger"></span>
+  <div class="small-image-holder">
+    <img class="small-image" src="assets/supersavertravel_logo.svg" alt="Travel Logo">
+  </div>
+  <span class="glyphicon glyphicon-option-vertical"></span>
+</div>
+
+<div *ngIf="screenService.isLarge()" class="title-bar user-title-bar">
+  <img src="assets/supersavertravel_logo.svg" alt="Travel Logo" class="bar-logo">
   <div class="menu-area">
     <fw-top-bar>
     </fw-top-bar>
     <!--menu-->
   </div>
-</div>>
+</div>
