@@ -26,3 +26,18 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 =======
+https://firebase.google.com/docs/cli/
+npm install -g firebase-tools
+create a directory for your site
+
+Sign in to Google:
+
+$ firebase login
+Initiate your project:
+
+$ firebase init
+Add your static files to your deploy directory (the default is public)
+
+Deploy your website:
+
+$ firebase deploy
