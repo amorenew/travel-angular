@@ -17,7 +17,7 @@ export interface FrameworkConfigSettings {
 export class FrameworkConfigService {
 
   showLanguageSelector = true;
-  showuserControls = true;
+  showUserControls = true;
   showStatusBar = true;
   showStatusBarBreakpoint = 0;
   socialIcons = new Array < IconFiles > ();

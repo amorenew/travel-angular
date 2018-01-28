@@ -8,7 +8,7 @@ import { FrameworkConfigService } from '../services/framework-config.service';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor(private frameworkConfigService:FrameworkConfigService) {
+  constructor(public frameworkConfigService:FrameworkConfigService) {
     console.log(frameworkConfigService);
   }
 
