@@ -41,3 +41,6 @@ Add your static files to your deploy directory (the default is public)
 Deploy your website:
 
 $ firebase deploy
+
+firebase by >> yarn deploy
+https://travel-angular-78148.firebaseapp.com/
