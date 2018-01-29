@@ -28,18 +28,22 @@
 
 .small-image-holder {
     flex-grow: 1;
+    align-self: center;
+    margin: auto;
+justify-content:center;
 }
 
 .small-image {
-    width: 40%;
     height: 45px;
-    padding: 5px;
-    position: fixed;
+    padding: 2px;
+    
 }
 
 .menu-hamburger, .menu-options {
     color: white;
     font-size: 30px;
     padding: 10px;
-    position: fixed;
+    margin-right: 10px;
+    margin-left: 20px;
+    line-height: 45px;
 }
