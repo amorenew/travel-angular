@@ -9,6 +9,7 @@ import {StatusBarComponent} from './status-bar/status-bar.component';
 import {ScreenService} from './services/screen.service';
 import {ScreenLarge} from './directives/screen-large.directive';
 import {ScreenBelowLarge} from './directives/screen-below-large.directive';
+import { MenuService } from './services/menu.service';
 
 @NgModule({
   imports: [CommonModule],
@@ -22,6 +23,6 @@ import {ScreenBelowLarge} from './directives/screen-below-large.directive';
     ScreenBelowLarge
   ],
   exports: [FrameworkBodyComponent],
-  providers: [FrameworkConfigService, ScreenService]
+  providers: [FrameworkConfigService, ScreenService,MenuService]
 })
 export class FrameworkModule {}

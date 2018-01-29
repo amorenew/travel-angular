@@ -1,9 +1,11 @@
 import {Component} from '@angular/core';
 import {FrameworkConfigService, FrameworkConfigSettings} from '../framework/services/framework-config.service';
+import {MenuService} from '../framework/services/menu.service';
+import {initialMenuItems} from './app.menu';
 
 @Component({selector: 'app-root', templateUrl: './app.component.html', styleUrls: ['./app.component.scss']})
 export class AppComponent {
-  constructor(private frameworkConfigService : FrameworkConfigService) {
+  constructor(private frameworkConfigService : FrameworkConfigService, private menuService : MenuService) {
     let config : FrameworkConfigSettings = {
       socialIcons: [
         {
@@ -23,8 +25,9 @@ export class AppComponent {
       showLanguageSelector: true,
       showUserControls: true,
       showStatusBar: true,
-      showStatusBarBreakpoint: 800,
+      showStatusBarBreakpoint: 800
     };
     frameworkConfigService.configure(config);
+    menuService.items = initialMenuItems;
   }
 }
