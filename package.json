@@ -26,6 +26,7 @@
     "@angular/router": "^5.2.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
+    "markdown-loader": "^2.0.2",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
@@ -35,6 +36,7 @@
     "@angular/language-service": "^5.2.0",
     "@storybook/addon-info": "^3.3.11",
     "@storybook/addon-knobs": "^3.3.11",
+    "@storybook/addon-notes": "^3.3.11",
     "@storybook/addon-viewport": "^3.3.11",
     "@storybook/angular": "^3.4.0-alpha.5",
     "@types/jasmine": "~2.8.3",
@@ -53,6 +55,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
+    "storybook-readme": "^3.2.0",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3",
