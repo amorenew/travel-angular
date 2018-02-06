@@ -6,7 +6,7 @@ import {TitleBarComponent} from '../src/framework/title-bar/title-bar.component'
 import {ContentComponent} from '../src/framework/content/content.component';
 import { withNotes } from '@storybook/addon-notes';
 
-import README1 from '../src/framework/content/README1.md';
+import * as readme from '../src/framework/content/README1.md';
 
 
 // import README2 from '../src/framework/content/README2.md';
@@ -31,6 +31,20 @@ import README1 from '../src/framework/content/README1.md';
 //         component: HeadComponent,
 //     })
 //   );
+// storiesOf('comp', module)
+// .add(
+// 'withNotes',
+// withNotes({ text: marked(readme) })(() => ({
+// ...story there
+// }))
+// );
+storiesOf('Component', module)
+  .add('With Markdown', withNotes(readme)(() => ({
+    component: HeadComponent,
+    props: {
+        text: '😀 😎 👍 💯'
+    }
+})));
 
 storiesOf('My Button', module)
 .add('Font Test',()=>({
