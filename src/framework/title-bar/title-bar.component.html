@@ -1,5 +1,7 @@
 <div *screenBelowLarge class="title-bar-small  user-title-bar">
-  <span class="glyphicon glyphicon-menu-hamburger menu-hamburger"></span>
+  <span class="glyphicon glyphicon-menu-hamburger menu-hamburger"
+  (click)="menuService.toggleLeftSideMenu()"
+  ></span>
   <div class="small-image-holder">
     <img class="small-image" src="assets/supersavertravel_logo.svg" alt="Travel Logo">
   </div>
@@ -11,6 +13,6 @@
   <div class="menu-area">
     <fw-top-bar>
     </fw-top-bar>
-    <fw-menu></fw-menu>
+    <fw-menu *ngIf="!menuService.isVertical"></fw-menu>
   </div>
 </div>

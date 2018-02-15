@@ -18,6 +18,18 @@
     width: auto;
 }
 
+:host(.vertical-menu){
+    display:block;
+    margin-left:0;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    color:white;
+}
+
+:host(.vertical-menu.in-popup){
+    padding-left: 16px;
+}
+
 span {
     pointer-events: none;
 }
@@ -37,6 +49,14 @@ span {
     background-color: rgba(221, 255, 221, 0.144);
 }
 
+.menu-item.vertical-menu:hover{
+    background-color: #0068bc;
+}
+
 .router-link-active{
     background-color:  rgba(221, 255, 221, 0.144);
+}
+
+.router-link-active.vertical-menu{
+    background-color: #0068bc;
 }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CountriesComponent } from './countries.component';
+import { PopMenuComponent } from './pop-menu.component';
 
-describe('CountriesComponent', () => {
-  let component: CountriesComponent;
-  let fixture: ComponentFixture<CountriesComponent>;
+describe('PopMenuComponent', () => {
+  let component: PopMenuComponent;
+  let fixture: ComponentFixture<PopMenuComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountriesComponent ]
+      declarations: [ PopMenuComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CountriesComponent);
+    fixture = TestBed.createComponent(PopMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

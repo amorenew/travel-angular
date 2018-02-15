@@ -5,6 +5,15 @@
     flex-grow: 1;
 }
 
+:host(.vertical-menu){
+    display: inline-block;
+    width: 200px;
+    padding-left: 4px;
+    flex-grow: 0;
+    background-color: #555;
+    overflow: auto;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -13,4 +22,13 @@ ul {
 
 li {
     display: inline;
+}
+
+button{
+    margin-top: 20px;
+}
+
+button.horizontal {
+    margin-left: 20px;
+    margin-bottom: 2px;
 }
