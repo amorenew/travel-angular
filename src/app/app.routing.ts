@@ -5,28 +5,43 @@ import {SettingsComponent} from './settings/settings.component';
 import {CountryListComponent} from './country-list/country-list.component';
 import {CountryDetailComponent} from './country-detail/country-detail.component';
 import {CountryMaintComponent} from './country-maint/country-maint.component';
+import {AuthenticatedUserComponent} from './authenticated-user/authenticated-user.component';
+import {SignInComponent} from '../framework/users/sign-in/sign-in.component';
+import {RegisterUserComponent} from '../framework/users/register-user/register-user.component';
 
 export const appRoutes : Routes = [
     {
-        path: 'dashboard',
-        component: DashboardComponent
+        path: 'signin',
+        component: SignInComponent
     }, {
-        path: 'country-list/:count',
-        component: CountryListComponent
+        path: 'register',
+        component: RegisterUserComponent
     }, {
-        path: 'country-detail/:country',
-        component: CountryDetailComponent
-    }, {
-        path: 'country-maint',
-        component: CountryMaintComponent
-    }, {
-        path: 'settings',
-        component: SettingsComponent
+        path: 'authenticated',
+        component: AuthenticatedUserComponent,canActivate:[AuthGuard],
+        children: [
+            {
+                path: 'dashboard',
+                component: DashboardComponent
+            }, {
+                path: 'country-list/:count',
+                component: CountryListComponent
+            }, {
+                path: 'country-detail/:country',
+                component: CountryDetailComponent
+            }, {
+                path: 'country-maint',
+                component: CountryMaintComponent
+            }, {
+                path: 'settings',
+                component: SettingsComponent
+            }
+        ]
     }, {
         path: '',
-        component: DashboardComponent
+        component: SignInComponent
     }, {
         path: '**',
-        component: DashboardComponent
+        component: SignInComponent
     }
 ];

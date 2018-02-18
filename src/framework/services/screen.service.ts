@@ -19,7 +19,7 @@ export class ScreenService {
       this.screenHeight = window.innerHeight;
       window.addEventListener('resize', (event) => this.onResize(event));
     } catch (e) {
-      //we're going with default screen dimensions
+      // we're going with default screen dimensions
       console.log(e);
     }
   }

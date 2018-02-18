@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {FrameworkBodyComponent} from './framework-body/framework-body.component';
 import {ContentComponent} from './content/content.component';
@@ -14,11 +15,13 @@ import {ScreenBelowLarge} from './directives/screen-below-large.directive';
 import {MenuService} from './services/menu.service';
 import {MenuComponent} from './menus/menu/menu.component';
 import {MenuItemComponent} from './menus/menu-item/menu-item.component';
-import { PopMenuComponent } from './menus/pop-menu/pop-menu.component';
+import {PopMenuComponent} from './menus/pop-menu/pop-menu.component';
+import {SignInComponent} from './users/sign-in/sign-in.component';
+import {RegisterUserComponent} from './users/register-user/register-user.component';
 
 @NgModule({
   imports: [
-    CommonModule, RouterModule
+    CommonModule, RouterModule, FormsModule, ReactiveFormsModule
   ],
   declarations: [
     FrameworkBodyComponent,
@@ -30,9 +33,17 @@ import { PopMenuComponent } from './menus/pop-menu/pop-menu.component';
     ScreenBelowLarge,
     MenuComponent,
     MenuItemComponent,
-    PopMenuComponent
+    PopMenuComponent,
+    SignInComponent,
+    RegisterUserComponent
   ],
-  exports: [FrameworkBodyComponent],
-  providers: [FrameworkConfigService, ScreenService, MenuService]
+  exports: [
+    FrameworkBodyComponent, SignInComponent, RegisterUserComponent, FormsModule, ReactiveFormsModule
+  ],
+  providers: [
+    FrameworkConfigService,
+    ScreenService,
+    MenuService, 
+  ]
 })
 export class FrameworkModule {}

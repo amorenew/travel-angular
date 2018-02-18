@@ -4,13 +4,31 @@ import {
   HostBinding,
   HostListener,
   ElementRef,
-  Renderer
+  Renderer,
+  animate,
+  trigger,
+  transition,
+  style
 } from '@angular/core';
 import {Input} from '@angular/core';
-import {MenuItem, MenuService} from "../../services/menu.service";
+import {MenuItem, MenuService} from '../../services/menu.service';
 import {Router, NavigationEnd} from '@angular/router';
 
-@Component({selector: 'fw-menu-item', templateUrl: './menu-item.component.html', styleUrls: ['./menu-item.component.scss']})
+@Component({selector: 'fw-menu-item', 
+templateUrl: './menu-item.component.html', 
+styleUrls: ['./menu-item.component.scss'],
+animations:[
+  trigger('visibilityChanged',[
+    transition(':enter',[// :enter is alias to 'void => *'
+    style({opacity:0}),
+    animate(300,style({opacity:1}))
+    ]),
+    transition(':leave',[ // leave is alias to '* => void'
+    animate(100,style({opacity:0}))
+  ])
+  ])
+]
+})
 
 export class MenuItemComponent implements OnInit {
   @Input()item : MenuItem;
@@ -26,15 +44,18 @@ export class MenuItemComponent implements OnInit {
 
   ngOnInit() {
     this.checkActiveRoute(this.router.url);
-    this.router.events.subscribe((event)=>{
-      if (event instanceof NavigationEnd) {
-        this.checkActiveRoute(event.url);
-        console.log(event.url+' '+this.item.route+' '+ this.isActiveRoute);
-      }
-    });
+    this
+      .router
+      .events
+      .subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          this.checkActiveRoute(event.url);
+          // console.log(event.url + ' ' + this.item.route + ' ' + this.isActiveRoute);
+        }
+      });
   }
   checkActiveRoute(route : string) {
-    this.isActiveRoute = (route == '/' + this.item.route);
+    this.isActiveRoute = (route === '/' + this.item.route);
   }
   @HostListener('click', ['$event'])
   onclick(event) : void {
@@ -45,13 +66,14 @@ export class MenuItemComponent implements OnInit {
       }
     } else if (this.item.route) {
       // force horizontal menus to close by sending a mouseleave event
-      let newEvent = new MouseEvent('mouseleave', {bubbles: true});
+      const newEvent = new MouseEvent('mouseleave', {bubbles: true});
       this
         .render
         .invokeElementMethod(this.elementRef.nativeElement, 'dispatchEvent', [newEvent]);
       this
         .router
         .navigate(['/', this.item.route]);
+        this.menuService.showingLeftSideMenu=false;
     }
   }
 

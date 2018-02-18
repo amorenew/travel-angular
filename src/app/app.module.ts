@@ -1,26 +1,42 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {RouterModule} from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {HeadComponent} from './head/head.component';
 import {FrameworkModule} from '../framework/framework.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { SettingsComponent } from './settings/settings.component';
-import { appRoutes } from './app.routing';
-import { CountryDetailComponent } from './country-detail/country-detail.component';
-import { CountryListComponent } from './country-list/country-list.component';
-import { CountryMaintComponent } from './country-maint/country-maint.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {SettingsComponent} from './settings/settings.component';
+import {appRoutes} from './app.routing';
+import {CountryDetailComponent} from './country-detail/country-detail.component';
+import {CountryListComponent} from './country-list/country-list.component';
+import {CountryMaintComponent} from './country-maint/country-maint.component';
+import {AuthenticatedUserComponent} from './authenticated-user/authenticated-user.component';
+import {UserService} from './services/user.service';
+import { UserApi } from '../framework/users/user-api';
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent, HeadComponent, DashboardComponent, SettingsComponent, CountryDetailComponent, CountryListComponent, CountryMaintComponent
+    AppComponent,
+    HeaderComponent,
+    HeadComponent,
+    DashboardComponent,
+    SettingsComponent,
+    CountryDetailComponent,
+    CountryListComponent,
+    CountryMaintComponent,
+    AuthenticatedUserComponent
   ],
   imports: [
-    BrowserModule, FrameworkModule,RouterModule.forRoot(appRoutes),
+    BrowserModule, FrameworkModule, RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    UserService, {
+      provide: UserApi,
+      useExisting: UserService
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
