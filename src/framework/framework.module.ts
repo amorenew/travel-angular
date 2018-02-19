@@ -18,6 +18,8 @@ import {MenuItemComponent} from './menus/menu-item/menu-item.component';
 import {PopMenuComponent} from './menus/pop-menu/pop-menu.component';
 import {SignInComponent} from './users/sign-in/sign-in.component';
 import {RegisterUserComponent} from './users/register-user/register-user.component';
+import {DynamicFormComponent} from './dynamic-forms/dynamic-form/dynamic-form.component';
+import {DynamicFieldComponent} from './dynamic-forms/dynamic-field/dynamic-field.component';
 
 @NgModule({
   imports: [
@@ -35,15 +37,19 @@ import {RegisterUserComponent} from './users/register-user/register-user.compone
     MenuItemComponent,
     PopMenuComponent,
     SignInComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    DynamicFormComponent,
+    DynamicFieldComponent
   ],
   exports: [
-    FrameworkBodyComponent, SignInComponent, RegisterUserComponent, FormsModule, ReactiveFormsModule
+    FrameworkBodyComponent,
+    SignInComponent,
+    RegisterUserComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    DynamicFormComponent,
+    DynamicFieldComponent
   ],
-  providers: [
-    FrameworkConfigService,
-    ScreenService,
-    MenuService, 
-  ]
+  providers: [FrameworkConfigService, ScreenService, MenuService]
 })
 export class FrameworkModule {}

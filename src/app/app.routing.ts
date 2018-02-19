@@ -37,7 +37,7 @@ export const appRoutes : Routes = [
                         path: 'country-list/:count',
                         component: CountryListComponent
                     }, {
-                        path: 'country-detail/:country',
+                        path: 'country-detail/:id/:operation',
                         component: CountryDetailComponent
                     }, {
                         path: 'country-maint',
