@@ -8,6 +8,7 @@ import {CountryMaintComponent} from './country-maint/country-maint.component';
 import {AuthenticatedUserComponent} from './authenticated-user/authenticated-user.component';
 import {SignInComponent} from '../framework/users/sign-in/sign-in.component';
 import {RegisterUserComponent} from '../framework/users/register-user/register-user.component';
+import {AuthGuardService} from './services/auth-guard.service';
 
 export const appRoutes : Routes = [
     {
@@ -18,23 +19,34 @@ export const appRoutes : Routes = [
         component: RegisterUserComponent
     }, {
         path: 'authenticated',
-        component: AuthenticatedUserComponent,canActivate:[AuthGuard],
+        component: AuthenticatedUserComponent,
+        canActivate: [AuthGuardService],
         children: [
             {
-                path: 'dashboard',
-                component: DashboardComponent
-            }, {
-                path: 'country-list/:count',
-                component: CountryListComponent
-            }, {
-                path: 'country-detail/:country',
-                component: CountryDetailComponent
-            }, {
-                path: 'country-maint',
-                component: CountryMaintComponent
-            }, {
-                path: 'settings',
-                component: SettingsComponent
+                path: '',
+                canActivateChild: [AuthGuardService],
+                children: [
+                    {
+                        path: '',
+                        redirectTo: 'dashboard',
+                        pathMatch: 'full'
+                    }, {
+                        path: 'dashboard',
+                        component: DashboardComponent
+                    }, {
+                        path: 'country-list/:count',
+                        component: CountryListComponent
+                    }, {
+                        path: 'country-detail/:country',
+                        component: CountryDetailComponent
+                    }, {
+                        path: 'country-maint',
+                        component: CountryMaintComponent
+                    }, {
+                        path: 'settings',
+                        component: SettingsComponent
+                    }
+                ]
             }
         ]
     }, {

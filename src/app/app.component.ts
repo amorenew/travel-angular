@@ -6,7 +6,7 @@ import {initialMenuItems} from './app.menu';
 @Component({selector: 'app-root', templateUrl: './app.component.html', styleUrls: ['./app.component.scss']})
 export class AppComponent {
   constructor(private frameworkConfigService : FrameworkConfigService, private menuService : MenuService) {
-    let config : FrameworkConfigSettings = {
+    const config : FrameworkConfigSettings = {
       socialIcons: [
         {
           imageFile: 'assets/ic_social_fb.svg',

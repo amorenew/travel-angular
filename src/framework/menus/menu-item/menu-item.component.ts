@@ -72,7 +72,7 @@ export class MenuItemComponent implements OnInit {
         .invokeElementMethod(this.elementRef.nativeElement, 'dispatchEvent', [newEvent]);
       this
         .router
-        .navigate(['/', this.item.route]);
+        .navigate([ this.item.route]);
         this.menuService.showingLeftSideMenu=false;
     }
   }
