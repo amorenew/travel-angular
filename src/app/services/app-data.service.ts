@@ -88,7 +88,7 @@ export class AppDataService {
     getCountry(id : number) : Observable < Country > {
         const country = this
             .countries
-            .find(c => c.id === id);
+            .find(c => c.id == id);
         return Observable.of(country);
     }
 
