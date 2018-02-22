@@ -5,15 +5,16 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build --aot --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "storybook-build": "build-storybook -c .storybook -o dist/storybook",
-    "deploy": "yarn build && yarn storybook-build && firebase deploy && opn https://travel-angular-78148.firebaseapp.com -- firefox",
-    "perf": "concurrently \"opn https://travel-angular-78148.firebaseapp.com -- firefox\"  \"opn https://travel-angular-78148.firebaseapp.com -- chrome --incognito\" \"sleepms 5000 && lighthouse --view https://travel-angular-78148.firebaseapp.com\""
-
+    "sw": "sw-precache --root=dist --config=sw-precache-config.js",
+    "deploy": "yarn build && yarn storybook-build && yarn sw && firebase deploy && opn https://travel-angular-78148.firebaseapp.com -- firefox",
+    "perf": "concurrently \"opn https://travel-angular-78148.firebaseapp.com -- firefox\"  \"opn https://travel-angular-78148.firebaseapp.com -- chrome --incognito\" \"sleepms 5000 && lighthouse --view https://travel-angular-78148.firebaseapp.com\"",
+    "static-serve": "cd dist && live-server --port=4200 --host=localhost --entry-file=/index.html"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +27,7 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "@angular/service-worker": "^5.2.6",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "markdown-loader": "^2.0.2",
@@ -61,6 +63,7 @@
     "protractor": "~5.1.2",
     "sleep-ms": "^2.0.1",
     "storybook-readme": "^3.2.0",
+    "sw-precache": "^5.2.1",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3",

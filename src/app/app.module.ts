@@ -1,6 +1,8 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
 
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
@@ -17,8 +19,8 @@ import {UserService} from './services/user.service';
 import {UserApi} from '../framework/users/user-api';
 import {AuthGuardService} from './services/auth-guard.service';
 import {AppDataService} from './services/app-data.service';
-import { ImagePanelComponent } from './panels/image-panel/image-panel.component';
-import { CountryPanelComponent } from './panels/country-panel/country-panel.component';
+import {ImagePanelComponent} from './panels/image-panel/image-panel.component';
+import {CountryPanelComponent} from './panels/country-panel/country-panel.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { CountryPanelComponent } from './panels/country-panel/country-panel.comp
     CountryPanelComponent
   ],
   imports: [
-    BrowserModule, FrameworkModule, RouterModule.forRoot(appRoutes)
+    BrowserModule, FrameworkModule, RouterModule.forRoot(appRoutes),
+    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production})
   ],
   providers: [
     UserService, {
