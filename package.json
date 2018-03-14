@@ -28,7 +28,7 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "@angular/service-worker": "^5.2.6",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "4.0.0",
     "core-js": "^2.4.1",
     "markdown-loader": "^2.0.2",
     "rxjs": "^5.5.6",

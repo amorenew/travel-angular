@@ -7,6 +7,7 @@ import {ContentComponent} from '../src/framework/content/content.component';
 import { withNotes } from '@storybook/addon-notes';
 
 import * as readme from '../src/framework/content/README1.md';
+import { moduleMetadata } from "@storybook/angular";
 
 
 // import README2 from '../src/framework/content/README2.md';
@@ -45,6 +46,22 @@ storiesOf('Component', module)
         text: '😀 😎 👍 💯'
     }
 })));
+storiesOf("My Button", module)
+  .addDecorator(
+    moduleMetadata({
+      declarations: [HeadComponent]
+    })
+  )
+  .add("with text", () => ({
+    template: `<app-head></app-head>`,
+    props: {
+      text: "Hello Button",
+      onClick: event => {
+        console.log("some bindings work");
+        console.log(event);
+      }
+    }
+  }));
 
 storiesOf('My Button', module)
 .add('Font Test',()=>({
