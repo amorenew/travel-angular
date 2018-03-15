@@ -1,0 +1,6 @@
+@import '~sass/styles';
+
+.test-extend2{
+    color: red;
+    @extend .test-extend;
+}
